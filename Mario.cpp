@@ -174,9 +174,15 @@ void Mario::updateKeyDown(unsigned char button)
         if (this->state_ == FIRE_STATE) {
             MarioFireball *fb = new MarioFireball;
             fb->setTop(this->top());
-            fb->setLeft(this->right());
             fb->setBottom(this->top() - 8);
-            fb->setRight(this->right() + 8);
+            if (direction_ == 1) {
+                fb->setLeft(this->right());
+                fb->setRight(this->right() + 8);
+            }
+            else{
+                fb->setRight(this->left());
+                fb->setLeft(this->left() - 8);
+            }
             if (direction_ == 1) {
                 fb->setXVelocity(1.0);
             }

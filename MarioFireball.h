@@ -21,6 +21,8 @@ private:
     GLuint texture_[4];
     int texturePos;
     void sprite();
+    bool ups;
+    int upCounter;
     
 public:
 	// openGL draw method

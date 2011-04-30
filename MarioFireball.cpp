@@ -24,6 +24,8 @@ MarioFireball::MarioFireball()
 	setPoints(0);
 	setXVelocity(0.0);
 	setYVelocity(0.0);
+    ups = false;
+    upCounter = 0;
     
     sprite();
 }
@@ -88,7 +90,8 @@ bool MarioFireball::canMove()
 		}
         else if (dBottom->objectType() == BREAKABLE || dBottom->objectType() == QUESTION || dBottom->objectType() == PIPE || dBottom->objectType() == OFFQUESTION || dBottom->objectType() == REGULAR || dBottom->objectType() == FLAG)
         {
-            this->setYVelocity(0.0);
+            this->setYVelocity(1.0);
+            ups = true;
         }
         else if (dBottom->objectType() == MARIOFIREBALL){
             this->setYVelocity(-1.0);
@@ -96,7 +99,16 @@ bool MarioFireball::canMove()
 
     }
     else {
-        this->setYVelocity(-1.0);
+        if (ups) {
+            upCounter++;
+        }
+        else{
+            this->setYVelocity(-1.0);
+        }
+        if (upCounter >= 16) {
+            upCounter = 0;
+            ups = false;
+        }
     }
 
     return keepGoing;
