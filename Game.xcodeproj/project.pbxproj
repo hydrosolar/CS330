@@ -81,6 +81,7 @@
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* Game.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* Game.1 */; };
 		B7A503E7135CC79200F72E5C /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A503E5135CC79200F72E5C /* Background.cpp */; };
+		B7A745A8136BBB780020CAE4 /* Passable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A745A7136BBB780020CAE4 /* Passable.cpp */; };
 		B7DC8B26135DF9F4003E3DBD /* Mario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7DC8B25135DF9F4003E3DBD /* Mario.cpp */; };
 		DA38FB7C130D9E5700C5F7A6 /* LList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA38FB7B130D9E5700C5F7A6 /* LList.cpp */; };
 /* End PBXBuildFile section */
@@ -150,6 +151,8 @@
 		8DD76F6C0486A84900D96B5E /* Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Game; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A503E5135CC79200F72E5C /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
 		B7A503E6135CC79200F72E5C /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
+		B7A745A6136BBA890020CAE4 /* Passable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passable.h; sourceTree = "<group>"; };
+		B7A745A7136BBB780020CAE4 /* Passable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Passable.cpp; sourceTree = "<group>"; };
 		B7DC8B25135DF9F4003E3DBD /* Mario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mario.cpp; sourceTree = "<group>"; };
 		C6859E8B029090EE04C91782 /* Game.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Game.1; sourceTree = "<group>"; };
 		DA38FB79130D9E4800C5F7A6 /* ListNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListNode.h; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 				B7A503E5135CC79200F72E5C /* Background.cpp */,
 				B7A503E6135CC79200F72E5C /* Background.h */,
 				03739E77135759580001C080 /* Pipe.cpp */,
+				B7A745A6136BBA890020CAE4 /* Passable.h */,
+				B7A745A7136BBB780020CAE4 /* Passable.cpp */,
 			);
 			name = Drawable;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				03739E79135759580001C080 /* Pipe.cpp in Sources */,
 				B7A503E7135CC79200F72E5C /* Background.cpp in Sources */,
 				B7DC8B26135DF9F4003E3DBD /* Mario.cpp in Sources */,
+				B7A745A8136BBB780020CAE4 /* Passable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

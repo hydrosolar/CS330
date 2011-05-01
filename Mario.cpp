@@ -397,6 +397,7 @@ void Mario::check() {
             case BREAKABLE:
             case REGULAR:
             case QUESTION:
+            case PASSABLE:
                 if (this->getYVelocity() < 0) {
                     this->setYVelocity(0.0);
                 }

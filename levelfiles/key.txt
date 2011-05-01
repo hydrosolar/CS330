@@ -12,6 +12,9 @@ S star
 P pipe (top)
 p pipe (bottom)
 
+q passable left
+a passable middle
+r passable right
 
 g goomba
 k koopa

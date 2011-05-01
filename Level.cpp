@@ -16,6 +16,7 @@
 #include "Pipe.h"
 #include "Flag.h"
 #include "Background.h"
+#include "Passable.h"
 
 using namespace std;
 
@@ -286,6 +287,23 @@ void Level::makeLevel(int levelNumber)
             }
             else {
                 levelDrawable_.append(background);
+            }
+        }
+        else if (object== 'q' || object=='a' || object=='r'){
+            
+			//create bush
+            Passable *passable = new Passable(object);
+            passable->setTop(ycoord + 16);
+            passable->setBottom(ycoord);
+            passable->setLeft(xcoord);
+            passable->setRight(xcoord + 16);
+            
+            //place in correct list
+            if (xcoord<256) {
+                activeDrawable_.append(passable);
+            }
+            else {
+                levelDrawable_.append(passable);
             }
         }
         

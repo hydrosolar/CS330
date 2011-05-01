@@ -25,6 +25,7 @@ const int REGULAR = 15;
 const int PIPE = 16;
 const int OFFQUESTION = 17;
 const int BACKGROUND = 18;
+const int PASSABLE = 19;
 
 
 class Base {
