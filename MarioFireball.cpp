@@ -105,6 +105,9 @@ bool MarioFireball::canMove()
         else if (dBottom->objectType() == SHELL) {
             Level::sharedLevel()->removeDrawable(this);
         }
+        else if (dBottom->objectType() == SHELL) {
+            Level::sharedLevel()->removeDrawable(this);
+        }
         else if (dBottom->objectType() == MARIOFIREBALL){
             this->setYVelocity(-1.0);
         }
