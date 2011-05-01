@@ -46,11 +46,15 @@ bool MarioFireball::canMove()
 	Drawable *dTop = this->checkTop();
     Drawable *dBottom = this->checkBottom();
     
+    // if keepGoing is true, object can continue to move under current velocities
+    // if keepGoing is false, object needs to turn around
 	bool keepGoing = true;
     
+    // if something is detected to the right or the left of the object
+    // determine if it should be removed, or kill the object and be removed
 	if (dRight != NULL)
 	{
-        if (dRight->objectType() == BREAKABLE || dRight->objectType() == QUESTION || dRight->objectType() == PIPE || dRight->objectType() == OFFQUESTION || dRight->objectType() == REGULAR || dRight->objectType() == FLAG)
+        if (dRight->objectType() == BREAKABLE || dRight->objectType() == QUESTION || dRight->objectType() == PIPE || dRight->objectType() == OFFQUESTION || dRight->objectType() == REGULAR || dRight->objectType() == FLAG || dRight->objectType() == SHELL)
         {
             Level::sharedLevel()->removeDrawable(this);
         }
@@ -60,10 +64,9 @@ bool MarioFireball::canMove()
             Level::sharedLevel()->removeDrawable(this);
         }
     }
-    
     if (dLeft != NULL)
 	{
-        if (dLeft->objectType() == BREAKABLE || dLeft->objectType() == QUESTION || dLeft->objectType() == PIPE || dLeft->objectType() == OFFQUESTION || dLeft->objectType() == REGULAR || dLeft->objectType() == FLAG)
+        if (dLeft->objectType() == BREAKABLE || dLeft->objectType() == QUESTION || dLeft->objectType() == PIPE || dLeft->objectType() == OFFQUESTION || dLeft->objectType() == REGULAR || dLeft->objectType() == FLAG || dLeft->objectType() == SHELL)
         {
             Level::sharedLevel()->removeDrawable(this);
         }
@@ -74,6 +77,7 @@ bool MarioFireball::canMove()
         }
     }
     
+    // if an enemy falls on the fireball, kill the enemy and the fireball
     if (dTop != NULL) {
         if (dTop->objectType() == GOOMBA || dTop->objectType() == TURTLE || dTop->objectType() == PLANT)
 		{
@@ -82,6 +86,11 @@ bool MarioFireball::canMove()
 		}
     }
     
+    // if something is detected below the fireball
+    // if it is an enemy, kill it and the fireball
+    // if it should stop falling, set y velocity to 0
+    // if it hits a shell, shell should survive and fireball should disappear
+    // if two fireballs are directly next to one another, should both fall
     if (dBottom != NULL) {
         if (dBottom->objectType() == GOOMBA || dBottom->objectType() == TURTLE || dBottom->objectType() == PLANT)
 		{
@@ -93,11 +102,15 @@ bool MarioFireball::canMove()
             this->setYVelocity(1.0);
             ups = true;
         }
+        else if (dBottom->objectType() == SHELL) {
+            Level::sharedLevel()->removeDrawable(this);
+        }
         else if (dBottom->objectType() == MARIOFIREBALL){
             this->setYVelocity(-1.0);
         }
 
     }
+    // nothing is below the fireball, it should also fall
     else {
         if (ups) {
             upCounter++;
