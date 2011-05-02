@@ -8,6 +8,7 @@
 #include "Coin.h"
 #include "Level.h"
 #include "Pipe.h"
+#include "Ccoin.h"
 
 //------------------------------------------------------------
 
@@ -115,12 +116,13 @@ void Nonbreakable::generateReward(bool isLarge)
         if (reward_ == COIN) {
             // Create a coin above block it was in and adds drawable coin to the level
 			// uses the left and right of the block and the top and bottom plus 16
-            Coin *coin = new Coin();
-			coin->setLeft(this->left());
-			coin->setRight(this->right());
-			coin->setTop(this->top()+16);
-			coin->setBottom(this->top());
-			Level::sharedLevel()->addDrawable(coin);
+            Ccoin *qcoin = new Ccoin();
+			qcoin->setLeft(this->left());
+			qcoin->setRight(this->right());
+			qcoin->setTop(this->top()+16);
+			qcoin->setBottom(this->top());
+			Level::sharedLevel()->addDrawable(qcoin);
+            game->addCoin();
         }
         else if (reward_ == MUSHROOM) {
             if (isLarge != true) {
