@@ -163,7 +163,13 @@ void SceneWindow::displayCB()
 	LListIterator li;
 	
 	if (start_==true){
-		glClearColor(0.4196, 0.549, 1.0, 1.0);
+        if (level_->getBackgroundColor() == 0) {
+            glClearColor(0.4196, 0.549, 1.0, 1.0);
+        }
+        else{
+            glClearColor(0,0,0,1);
+        }
+		
 		
 		Drawable *item;
 	
