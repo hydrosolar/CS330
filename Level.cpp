@@ -17,6 +17,8 @@
 #include "Flag.h"
 #include "Background.h"
 #include "Passable.h"
+#include <sstream>
+#include <iostream>
 
 using namespace std;
 
@@ -71,17 +73,20 @@ void Level::makeLevel(int levelNumber)
     string fname;
     
 	ifstream inFile;
-	if (levelNumber== 1) {
-        fname = homeDir + "levelfiles/level1.txt";
-		inFile.open(fname.c_str());
-	}
-	else if (levelNumber== 2) {
-        fname = homeDir + "levelfiles/level3.txt";
-		inFile.open(fname.c_str());
-	}
+    
+    std::stringstream out;
+    std::string pos;
+    out<<levelNumber;
+    pos = out.str();
+    fname = homeDir + "levelfiles/level" + pos + ".txt";
+    inFile.open(fname.c_str());
+    
 	
 	int xcoord = 0, ycoord = 0, type, reward;
 	char object;
+    
+    inFile>>backgroundColor_;
+    getline(inFile,homeDir);
 	
 	//checks if the file exists and is readable
 	while (inFile.good()) {
@@ -417,7 +422,7 @@ void Level::removeDrawable(Drawable *obj)
 	//checks the object type and calls remove on the correct list
 	type = obj->objectType();
 
-	if ((type == FLAG) || (type == FIREFLOWER) || (type == COIN)) {
+	if ((type == FLAG) || (type == FIREFLOWER) || (type == COIN) || (type == STAR)) {
 		activeDrawable_.removeDrawable(obj);
 	}
 

@@ -43,6 +43,7 @@ public:
 	//starting position of marios left and bottom
 	int getLeftStart(){ return leftStart_;}
 	int getBottomStart(){ return bottomStart_;}
+    int getBackgroundColor(){ return backgroundColor_;}
 
 
 //------------------------------------------------------------
@@ -55,6 +56,6 @@ private:
 	// 6 LLists 3 active 3 inactive
 	// levelDrawable_ and activeDrawable contain only coins, fire flowers, and the flag
 	LList levelMovable_, levelDrawable_, levelBlocks_, activeMovable_, activeDrawable_, activeBlocks_;
-	int leftStart_, bottomStart_;
+	int leftStart_, bottomStart_, backgroundColor_;
 };
 #endif
