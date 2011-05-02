@@ -83,6 +83,7 @@
 		B7A503E7135CC79200F72E5C /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A503E5135CC79200F72E5C /* Background.cpp */; };
 		B7A745A8136BBB780020CAE4 /* Passable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A745A7136BBB780020CAE4 /* Passable.cpp */; };
 		B7DC8B26135DF9F4003E3DBD /* Mario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7DC8B25135DF9F4003E3DBD /* Mario.cpp */; };
+		B7F5CC9D136F14C100FA5868 /* Ccoin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7F5CC9C136F14C100FA5868 /* Ccoin.cpp */; };
 		DA38FB7C130D9E5700C5F7A6 /* LList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA38FB7B130D9E5700C5F7A6 /* LList.cpp */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +155,8 @@
 		B7A745A6136BBA890020CAE4 /* Passable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passable.h; sourceTree = "<group>"; };
 		B7A745A7136BBB780020CAE4 /* Passable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Passable.cpp; sourceTree = "<group>"; };
 		B7DC8B25135DF9F4003E3DBD /* Mario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mario.cpp; sourceTree = "<group>"; };
+		B7F5CC9B136F146800FA5868 /* Ccoin.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Ccoin.h; sourceTree = "<group>"; };
+		B7F5CC9C136F14C100FA5868 /* Ccoin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ccoin.cpp; sourceTree = "<group>"; };
 		C6859E8B029090EE04C91782 /* Game.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Game.1; sourceTree = "<group>"; };
 		DA38FB79130D9E4800C5F7A6 /* ListNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListNode.h; sourceTree = "<group>"; };
 		DA38FB7A130D9E5700C5F7A6 /* LList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LList.h; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				03739E77135759580001C080 /* Pipe.cpp */,
 				B7A745A6136BBA890020CAE4 /* Passable.h */,
 				B7A745A7136BBB780020CAE4 /* Passable.cpp */,
+				B7F5CC9B136F146800FA5868 /* Ccoin.h */,
+				B7F5CC9C136F14C100FA5868 /* Ccoin.cpp */,
 			);
 			name = Drawable;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 				B7A503E7135CC79200F72E5C /* Background.cpp in Sources */,
 				B7DC8B26135DF9F4003E3DBD /* Mario.cpp in Sources */,
 				B7A745A8136BBB780020CAE4 /* Passable.cpp in Sources */,
+				B7F5CC9D136F14C100FA5868 /* Ccoin.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
