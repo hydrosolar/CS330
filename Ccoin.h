@@ -19,10 +19,12 @@ private:
     GLuint texture_[4];
     void sprite();
     int texturePos;
+    int count_;
 public:
 	Ccoin()
     {
         texturePos = 0;
+        count_ = 0;
         sprite(); 
     }
     

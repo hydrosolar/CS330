@@ -20,8 +20,12 @@
 void Ccoin::draw(bool update)
 {
     if (update) {
-        if (texturePos < 3) {
+        if (count_ < 5) {
+            ++count_;
+        }
+        else if (texturePos < 3) {
             texturePos++;
+            count_ = 0;
         }
         else{
             Level::sharedLevel()->removeDrawable(this);

@@ -422,7 +422,7 @@ void Level::removeDrawable(Drawable *obj)
 	//checks the object type and calls remove on the correct list
 	type = obj->objectType();
 
-	if ((type == FLAG) || (type == FIREFLOWER) || (type == COIN) || (type == STAR)) {
+	if ((type == FLAG) || (type == FIREFLOWER) || (type == COIN) || (type == STAR) || type == BACKGROUND) {
 		activeDrawable_.removeDrawable(obj);
 	}
 
