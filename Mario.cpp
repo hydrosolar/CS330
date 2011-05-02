@@ -344,16 +344,15 @@ void Mario::check() {
                 if (this->getYVelocity() >= 0) {
                     ((Breakable*) objt)->breakBlock(this->getState() != SMALL_STATE);
                     (game)->breakBlock(this->getState() != SMALL_STATE);
-                    
-                    if (this->getState() != SMALL_STATE)
-                    {
-                        this->setTop(this->top() + 16);
-                        objt = this->checkTop();
-                        if (objt)
+                                          
+                    this->setTop(this->top() + 16);
+                    objt = this->checkTop();
+                    if (objt)
+                        if (objt->objectType() == GOOMBA ||objt->objectType() == TURTLE) {
                             Level::sharedLevel()->removeDrawable(objt);
-                        
-                        this->setTop(this->top() - 16);
-                    }
+                        }
+                    this->setTop(this->top() - 16);
+                    
                 }
                 break;
             // if an enemy falls on top of Mario, 
@@ -383,7 +382,7 @@ void Mario::check() {
                 if (starCount_ > 0)
                 {
                     game->jumpEnemy(1);
-                    Level::sharedLevel()->removeDrawable(objr);
+                    Level::sharedLevel()->removeDrawable(objt);
                 }
                 else if (starCount_ == 0 && hitCount_ == 0)
                 {
@@ -405,6 +404,7 @@ void Mario::check() {
             case STAR:
                 game->addPowerup();
                 starCount_ = 1000;
+                Level::sharedLevel()->removeDrawable(objt);
                 break;
             case FIREFLOWER:
                 game->addPowerup();
@@ -456,6 +456,8 @@ void Mario::check() {
                 this->jumpCount_ = 25;
                 this->setYVelocity(2.0);
             case SHELL:
+                this->jumpCount_ = 25;
+                this->setYVelocity(2.0);
             case ENEMYFIREBALL:
                 break;
             // if Mario lands on a reward, increase state accordingly or
@@ -472,6 +474,7 @@ void Mario::check() {
             case STAR:
                 game->addPowerup();
                 starCount_ = 1000;
+                Level::sharedLevel()->removeDrawable(objb);
                 break;
             case FIREFLOWER:
                 game->addPowerup();
@@ -538,7 +541,7 @@ void Mario::check() {
                 if (starCount_ > 0)
                 {
                     game->jumpEnemy(1);
-                    Level::sharedLevel()->removeDrawable(objr);
+                    Level::sharedLevel()->removeDrawable(objl);
                 }
                 else if (starCount_ == 0 && hitCount_ == 0)
                 {
@@ -559,6 +562,7 @@ void Mario::check() {
             case STAR:
                 game->addPowerup();
                 starCount_ = 1000;
+                Level::sharedLevel()->removeDrawable(objl);
                 break;
             case FIREFLOWER:
                 game->addPowerup();
@@ -649,7 +653,8 @@ void Mario::check() {
             // Make Mario invincible for 1000 frames
             case STAR:
                 game->addPowerup();
-                starCount_ = 50;
+                starCount_ = 1000;
+                Level::sharedLevel()->removeDrawable(objr);
                 break;
             case FIREFLOWER:
                 game->addPowerup();
